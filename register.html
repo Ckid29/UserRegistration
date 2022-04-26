@@ -12,7 +12,11 @@
 
     </header>
     <main>
-        <h2>Registration</h2>
+        <header class="site-init">Registration</header>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+        </nav>
         <div class="form-container">
             <!--
                 fname
@@ -43,9 +47,27 @@
                 <input type="password" id="txtPassword" placeholder="Enter your password">
             </div>
             <div class="form-control">
-                <label>gender</label>
+                <label>gender</label> <input type="gender" id="txtGender" placeholder="Enter your gender">
             </div>
-
+            <div class="form-control">
+                <label>address</label> <input type="address" id="txtAddress"
+                placeholder="Enter your Address">
+            </div>
+            <div class="form-control">
+                <label>Phone</label> <input type="phone" id="txtPhone"
+                placeholder="Enter your Phone">
+            </div>
+            <div>
+                <select class="form-control" id="payment method">
+                <option value="nai">Payment Method</option>
+                <option value="shower">Visa</option>
+                    <option value="grooming">Credit Card</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label>Color</label> <input type="Color" id="txtColor"
+                placeholder="Enter your Color">
+            </div>
         </div>
         <button onclick="register();">Register</button>
     </main>

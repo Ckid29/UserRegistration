@@ -27,8 +27,8 @@ function register(){
     let paymentmethod = $("#paymentmethod").val();
     let color = $("#color").val();
 
-    console.log(inputfName,inputlName,inputEmail,inputPassword);
-    let newUser = new User(inputfName, inputlName,inputEmail,inputPassword);
+    console.log(inputfName,inputlName,inputEmail,inputPassword,inputGender,inputAddress,inputPhone,inputPaymentMethod,inputColor);
+    let newUser = new User(inputfName, inputlName,inputEmail,inputPassword,inputGender,inputAddress,inputPhone,inputPaymentMethod,inputColor);
 }
 
 function init(){
