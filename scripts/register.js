@@ -16,6 +16,22 @@ class User {
     }
 }
 
+function isValid(user){
+    //mandatory email and password
+    //return false when the user is not valid
+    //return true when the user is valid
+    let valid=true;
+    if(user.email.length==0){
+        valid=false;
+        console.error("Add an email");
+    }
+    if(user.password==0){
+        valid=false;
+        console.error("Add a password");
+    }
+    return valid;
+}
+
 function register(){
     let inputfName = $("#txtFirstName").val();
     let inputlName = $("#txtLastName").val();
@@ -27,10 +43,13 @@ function register(){
     let paymentmethod = $("#paymentmethod").val();
     let color = $("#color").val();
 
-    console.log(inputfName,inputlName,inputEmail,inputPassword,inputGender,inputAddress,inputPhone,inputPaymentMethod,inputColor);
     let newUser = new User(inputfName, inputlName,inputEmail,inputPassword,inputGender,inputAddress,inputPhone,inputPaymentMethod,inputColor);
+    if(isValid(newUser)){
+        console.log(newUser);
+    }
 }
 
+    //if()
 function init(){
     console.log("Init Function");
 
