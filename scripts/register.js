@@ -21,17 +21,37 @@ function isValid(user){
     //return false when the user is not valid
     //return true when the user is valid
     let valid=true;
+    $("input").removeClass("input-error");
     if(user.email.length==0){
         valid=false;
         console.error("Add an email");
+        $("#txtEmail").addClass("input-error");
     }
     if(user.password==0){
         valid=false;
         console.error("Add a password");
+        $("#txtPassword").AddClass("input-error");
     }
     return valid;
 }
 
+function validatePass(){
+    console.log("validating pass");
+    //get the value from the input
+    let txtPass=$("#txtPassword");
+    let password=txtPass.val();
+    
+    //is the password less than 6 characters
+    if(password.length<6){
+        txtPass.css("background", "#ff9898");//jquery function to change the css
+    }else{
+        txtPass.css("background","#64ce66"); //jquery function to change the
+    }
+}
+
+    //compare if the password is less than 6 characters?
+    //$ function to change the css
+    
 function register(){
     let inputfName = $("#txtFirstName").val();
     let inputlName = $("#txtLastName").val();
@@ -45,17 +65,16 @@ function register(){
 
     let newUser = new User(inputfName, inputlName,inputEmail,inputPassword,inputGender,inputAddress,inputPhone,inputPaymentMethod,inputColor);
     if(isValid(newUser)){
-        console.log(newUser);
+        saveUser(newUser);//this fn is on the storeManager
+        $('input').val("");// clear the inputs
     }
 }
 
     //if()
 function init(){
-    console.log("Init Function");
+    console.log("Register");
 
-    let user1 = new User("Nathan, Hundley, Cmonsterkid@hotmail.com,123456")
-    let user2 = new User("Kevin, Carpenter, ccerda@gmail.com, 777777")
-    console.log(user1,user2);
+    $("txtPassword").keyup(validatePass);// it is excuted evertime that the key
 }
 
 window.onload=init;
